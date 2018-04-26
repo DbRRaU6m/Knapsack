@@ -19,26 +19,6 @@
             Weight[0][Items[0].Profit] = Items[0].Weight;
         }
 
-        /*
-        private void FillStates(IList<T> Items, int[][] Weight, int N, int P)
-        {
-            for (int i = 1; i < N; i++)                                                     // evaluation of state space
-            {
-                for (int j = 1; j < P; j++)
-                {
-                    if (j - Items[i].Profit >= 0)                                           // item i can occur in solution
-                    {
-                        Weight[i][j] = Math.Min(Weight[i - 1][j - Items[i].Profit] + Items[i].Weight, Weight[i - 1][j]);
-                    }
-                    else                                                                    // item i cannot occur in solution
-                    {
-                        Weight[i][j] = Weight[i - 1][j];
-                    }
-                }
-            }
-        }
-        */
-
         private void FillStatesParallel(IList<T> Items, int[][] Weight, int N, int P)       // parallel version of above method
         {
             for (int i = 1; i < N; i++)                                                     // evaluation of state space

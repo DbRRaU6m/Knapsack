@@ -30,54 +30,5 @@
             }
             return Result;
         }
-
-        /*
-        public static void Initialize<T>(this T[,] Array, T Value)
-        {
-            for (int i = 0; i < Array.GetLength(0); i++)
-            {
-                for (int j = 0; j < Array.GetLength(1); j++)
-                {
-                    Array[i, j] = Value;
-                }
-            }
-        }
-        */
-
-        /*
-        public static IEnumerable<T> Row<T>(this T[,] Array, int NumOfRow)
-        {
-            int NumOfColumns = Array.GetLength(1);
-            for (int j = 0; j < NumOfColumns; j++)
-            {
-                yield return Array[NumOfRow, j];
-            }
-        }
-        */
-
-        /*
-        public static T Deserialize<T>(string FullPath) where T : new()
-        {
-            T Result = default(T);
-            using (TextReader iReader = new StreamReader(FullPath))
-            {
-                var DeSerializer = new XmlSerializer(typeof(T));
-                Result = (T)DeSerializer.Deserialize(iReader);
-            }
-            return Result;
-        }
-        */
-
-        /*
-        public static void Serialize<T>(string FullPath, T Instance)
-        {
-            using (TextWriter iWriter = new StreamWriter(FullPath))
-            {
-                var Serializer = new XmlSerializer(typeof(T));
-                Serializer.Serialize(iWriter, Instance);
-            }
-        }
-        */
-
     }
 }
