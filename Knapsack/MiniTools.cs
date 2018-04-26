@@ -1,0 +1,83 @@
+﻿namespace Knapsack
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public static class MiniTools
+    {
+
+        public static T ArgMax<T, R>(T t1, T t2, Func<T, R> f) where R : IComparable<R>
+        {
+            return f(t1).CompareTo(f(t2)) < 0 ? t2 : t1;
+        }
+
+        public static T ArgMax<T, R>(this IEnumerable<T> Sequence, Func<T, R> f) where R : IComparable<R>
+        {
+            return Sequence.Aggregate((t1, t2) => ArgMax<T, R>(t1, t2, f));
+        }
+
+        public static T[][] Create<T>(int NumOfRows, int NumOfColumns, T Value)
+        {
+            var Result = new T[NumOfRows][];
+            for (int i = 0; i < NumOfRows; i++ )
+            {
+                Result[i] = new T[NumOfColumns];
+                for (int j = 0; j < NumOfColumns; j++)
+                {
+                    Result[i][j] = Value;
+                }
+            }
+            return Result;
+        }
+
+        /*
+        public static void Initialize<T>(this T[,] Array, T Value)
+        {
+            for (int i = 0; i < Array.GetLength(0); i++)
+            {
+                for (int j = 0; j < Array.GetLength(1); j++)
+                {
+                    Array[i, j] = Value;
+                }
+            }
+        }
+        */
+
+        /*
+        public static IEnumerable<T> Row<T>(this T[,] Array, int NumOfRow)
+        {
+            int NumOfColumns = Array.GetLength(1);
+            for (int j = 0; j < NumOfColumns; j++)
+            {
+                yield return Array[NumOfRow, j];
+            }
+        }
+        */
+
+        /*
+        public static T Deserialize<T>(string FullPath) where T : new()
+        {
+            T Result = default(T);
+            using (TextReader iReader = new StreamReader(FullPath))
+            {
+                var DeSerializer = new XmlSerializer(typeof(T));
+                Result = (T)DeSerializer.Deserialize(iReader);
+            }
+            return Result;
+        }
+        */
+
+        /*
+        public static void Serialize<T>(string FullPath, T Instance)
+        {
+            using (TextWriter iWriter = new StreamWriter(FullPath))
+            {
+                var Serializer = new XmlSerializer(typeof(T));
+                Serializer.Serialize(iWriter, Instance);
+            }
+        }
+        */
+
+    }
+}
