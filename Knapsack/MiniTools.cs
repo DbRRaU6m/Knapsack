@@ -20,7 +20,7 @@
         public static T[][] Create<T>(int NumOfRows, int NumOfColumns, T Value)
         {
             var Result = new T[NumOfRows][];
-            for (int i = 0; i < NumOfRows; i++ )
+            for (int i = 0; i < NumOfRows; i++)
             {
                 Result[i] = new T[NumOfColumns];
                 for (int j = 0; j < NumOfColumns; j++)

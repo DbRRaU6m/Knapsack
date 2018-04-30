@@ -26,9 +26,14 @@
 
         private void TestSingleInstanceDpProfit(KnapsackInstance<KnapsackItem> Instance, int Expected)
         {
+            Instance = new KnapsackReducer<KnapsackItem>().Reduce(Instance);
+
             var GreedySolution = new Greedy<KnapsackItem>().Solve(Instance);
             var GreedyBound = GreedySolution.Sum(iItem => iItem.Profit) + Instance.Items.Max(iItem => iItem.Profit);
             var ActualSolution = new DpProfit<KnapsackItem>{ ProfitUpperBound = GreedyBound }.Solve(Instance);
+
+            // System.GC.Collect();
+
             var Actual = ActualSolution.Sum(iItem => iItem.Profit);
             Assert.AreEqual(Expected, Actual, String.Format(FAILURE_FORMATSTRING, Instance.Name));
         }
@@ -91,10 +96,26 @@
         }
 
         [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpProfit")]
+        public void SmallCoefficients2000()
+        {
+            TestInstances(SMALL_COEFFICIENTS_NAME, 2000, TestSingleInstanceDpProfit);
+        }
+
+        /*
+        [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpProfit")]
+        public void SmallCoefficients5000()
+        {
+            TestInstances(SMALL_COEFFICIENTS_NAME, 5000, TestSingleInstanceDpProfit);
+        }
+        */
+
+        /*
+        [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpProfit")]
         public void SmallCoefficients10000()
         {
             TestInstances(SMALL_COEFFICIENTS_NAME, 10000, TestSingleInstanceDpProfit);
         }
+        */
 
         #endregion
 
