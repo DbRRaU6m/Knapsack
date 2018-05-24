@@ -39,7 +39,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -83,6 +83,7 @@
     <Compile Include="Interface\IKnapsackItem.cs" />
     <Compile Include="Interface\KnapsackInstance.cs" />
     <Compile Include="PisingerImport.cs" />
+    <Compile Include="Solvers\BranchBound.cs" />
     <Compile Include="Solvers\DpProfit.cs" />
     <Compile Include="Solvers\DpWeight.cs" />
     <Compile Include="Interface\KnapsackItem.cs" />
