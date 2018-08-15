@@ -8,7 +8,6 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Threading;
 
     [TestClass]
     public class KnapsackTest
@@ -62,84 +61,108 @@
                 }
             }
         }
-
-        #region small coefficients
+        
+        #region small coefficients dp profit
 
         [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpProfit")]
-        public void SmallCoefficients50()
+        public void SmallCoefficients50DpProfit()
         {
             TestInstances(SMALL_COEFFICIENTS_NAME, 50, TestSingleInstanceDpProfit);
         }
 
         [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpProfit")]
-        public void SmallCoefficients100()
+        public void SmallCoefficients100DpProfit()
         {
             TestInstances(SMALL_COEFFICIENTS_NAME, 100, TestSingleInstanceDpProfit);
         }
 
         [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpProfit")]
-        public void SmallCoefficients200()
+        public void SmallCoefficients200DpProfit()
         {
             TestInstances(SMALL_COEFFICIENTS_NAME, 200, TestSingleInstanceDpProfit);
         }
 
         [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpProfit")]
-        public void SmallCoefficients500()
+        public void SmallCoefficients500DpProfit()
         {
             TestInstances(SMALL_COEFFICIENTS_NAME, 500, TestSingleInstanceDpProfit);
         }
 
         [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpProfit")]
-        public void SmallCoefficients1000()
+        public void SmallCoefficients1000DpProfit()
         {
             TestInstances(SMALL_COEFFICIENTS_NAME, 1000, TestSingleInstanceDpProfit);
         }
 
         [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpProfit")]
-        public void SmallCoefficients2000()
+        public void SmallCoefficients2000DpProfit()
         {
             TestInstances(SMALL_COEFFICIENTS_NAME, 2000, TestSingleInstanceDpProfit);
         }
 
-        /*
         [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpProfit")]
-        public void SmallCoefficients5000()
+        public void SmallCoefficients5000DpProfit()
         {
             TestInstances(SMALL_COEFFICIENTS_NAME, 5000, TestSingleInstanceDpProfit);
         }
-        */
 
-        /*
         [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpProfit")]
-        public void SmallCoefficients10000()
+        public void SmallCoefficients10000DpProfit()
         {
             TestInstances(SMALL_COEFFICIENTS_NAME, 10000, TestSingleInstanceDpProfit);
         }
-        */
 
         #endregion
 
-        #region large coefficients
+        #region small coefficients dp weight
 
-        [TestMethod, TestCategory("LargeCoefficients"), TestCategory("DpProfit")]
-        public void LargeCoefficients50()
+        [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpWeight")]
+        public void SmallCoefficients50DpWeight()
         {
-            TestInstances(LARGE_COEFFICIENTS_NAME, 50, TestSingleInstanceDpProfit);
+            TestInstances(SMALL_COEFFICIENTS_NAME, 50, TestSingleInstanceDpWeight);
         }
 
-        [TestMethod, TestCategory("LargeCoefficients"), TestCategory("DpProfit")]
-        public void LargeCoefficients100()
+        [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpWeight")]
+        public void SmallCoefficients100DpWeight()
         {
-            TestInstances(LARGE_COEFFICIENTS_NAME, 100, TestSingleInstanceDpProfit);
+            TestInstances(SMALL_COEFFICIENTS_NAME, 100, TestSingleInstanceDpWeight);
         }
 
-        /*
-        [TestMethod, TestCategory("LargeCoefficients"), TestCategory("DpProfit")]
-        public void LargeCoefficients200()
+        [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpWeight")]
+        public void SmallCoefficients200DpWeight()
         {
-            TestInstances(LARGE_COEFFICIENTS_NAME, 200, TestSingleInstanceDpProfit);
+            TestInstances(SMALL_COEFFICIENTS_NAME, 200, TestSingleInstanceDpWeight);
         }
-        */
+
+        [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpWeight")]
+        public void SmallCoefficients500DpWeight()
+        {
+            TestInstances(SMALL_COEFFICIENTS_NAME, 500, TestSingleInstanceDpWeight);
+        }
+
+        [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpWeight")]
+        public void SmallCoefficients1000DpWeight()
+        {
+            TestInstances(SMALL_COEFFICIENTS_NAME, 1000, TestSingleInstanceDpWeight);
+        }
+
+        [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpWeight")]
+        public void SmallCoefficients2000DpWeight()
+        {
+            TestInstances(SMALL_COEFFICIENTS_NAME, 2000, TestSingleInstanceDpWeight);
+        }
+
+        [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpWeight")]
+        public void SmallCoefficients5000DpWeight()
+        {
+            TestInstances(SMALL_COEFFICIENTS_NAME, 5000, TestSingleInstanceDpWeight);
+        }
+
+        [TestMethod, TestCategory("SmallCoefficients"), TestCategory("DpWeight")]
+        public void SmallCoefficients10000DpWeight()
+        {
+            TestInstances(SMALL_COEFFICIENTS_NAME, 10000, TestSingleInstanceDpWeight);
+        }
 
         #endregion
 
