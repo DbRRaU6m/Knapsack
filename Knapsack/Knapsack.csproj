@@ -86,7 +86,6 @@
     <Compile Include="Solvers\DpProfit.cs" />
     <Compile Include="Solvers\DpWeight.cs" />
     <Compile Include="Interface\KnapsackItem.cs" />
-    <Compile Include="Solvers\Enumeration.cs" />
     <Compile Include="Solvers\Greedy.cs" />
     <Compile Include="Solvers\IKnapsackSolver.cs" />
     <Compile Include="MiniTools.cs" />
